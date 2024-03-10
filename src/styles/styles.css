@@ -3,7 +3,11 @@
 
 @theme {
 
+  /* Profile card */
   --color-pcard-brand-surface: hsl(185 75% 39%);
   --color-pcard-brand-text-1: hsl(229, 23%, 23%);
-  --color-pcard-brand-text-2: hsl(227, 10%, 46%)
+  --color-pcard-brand-text-2: hsl(227, 10%, 46%);
+
+  --color-bpcard-brand-surface: hsl(45, 100%, 50%);
+  /* Blog preview card */
 }
