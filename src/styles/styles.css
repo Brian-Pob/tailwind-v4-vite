@@ -8,6 +8,9 @@
   --color-pcard-brand-text-1: hsl(229, 23%, 23%);
   --color-pcard-brand-text-2: hsl(227, 10%, 46%);
 
-  --color-bpcard-brand-surface: hsl(45, 100%, 50%);
   /* Blog preview card */
+  --color-bpcard-brand-surface: hsl(45, 100%, 50%);
+  --color-bpcard-brand-surface-2: hsl(0, 0%, 100%);
+  --color-bpcard-brand-text-1: hsl(0, 0%, 7%);
+  --color-bpcard-brand-text-2: hsl(0, 0%, 50%);
 }

@@ -1,7 +1,11 @@
 ---
 import "../styles/styles.css";
 const title = "Blog Preview Card Component | Frontend Mentor";
-const description = "Blog Preview Card Component built with Astro and Tailwind CSS v4 alpha. Designed by Frontend Mentor.";
+const description =
+  "Blog Preview Card Component built with Astro and Tailwind CSS v4 alpha. Designed by Frontend Mentor.";
+
+import imageAvatar from "@assets/bp-card/image-avatar.webp";
+import illustrationArticle from "@assets/bp-card/illustration-article.svg";
 ---
 
 <html lang="en">
@@ -42,5 +46,58 @@ const description = "Blog Preview Card Component built with Astro and Tailwind C
       }
     </style>
   </head>
-  <body class="bg-bpcard-brand-surface"> </body>
+  <body class="bg-bpcard-brand-surface">
+    <main class="mx-auto grid h-screen w-prose place-content-center">
+      <div
+        class="bg-bpcard-brand-surface-2 relative flex aspect-[3/4] max-w-96 flex-col gap-4 rounded-2xl border border-black p-5"
+      >
+        <span
+          class="absolute top-2 left-2 -z-10 block h-full w-full transform rounded-2xl bg-black"
+        ></span>
+        <div class="h-min overflow-hidden rounded-lg">
+          <img
+            src={illustrationArticle.src}
+            alt=""
+            class="top-0 left-0 w-full object-cover"
+            width="350"
+            height="215"
+          />
+        </div>
+
+        <div class="flex grow flex-col justify-between">
+          <div class="flex flex-col gap-2">
+            <span
+              class="text-bpcard-brand-text-1 bg-bpcard-brand-surface w-min rounded-md py-1 px-2 text-sm font-bold"
+            >
+              Learning
+            </span>
+            <span class="text-bpcard-brand-text-1 text-sm">
+              Published 10 Mar 2024
+            </span>
+          </div>
+          <h2 class="text-bpcard-brand-text-1 text-2xl font-bold">
+            HTML &amp; CSS foundations
+          </h2>
+          <p class="text-bpcard-brand-text-1 text-base">
+            These languages are the backbone of every website. They define
+            structure, content, and presentation.
+          </p>
+          <a href="#" class="w-fit">
+            <div class="flex  items-center gap-2 ">
+              <img
+                src={imageAvatar.src}
+                alt=""
+                class="h-8 w-8 rounded-full"
+                width="32"
+                height="32"
+              />
+              <span class="text-bpcard-brand-text-1 text-base font-bold">
+                Greg Hooper
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
