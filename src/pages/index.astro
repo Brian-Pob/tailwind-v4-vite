@@ -1,24 +1,5 @@
 ---
 import "../styles/styles.css";
-import imageVictor from "../assets/image-victor.jpg";
-import bgPatternCard from "../assets/bg-pattern-card.svg";
-import bgPatternTop from "../assets/bg-pattern-top.svg";
-import bgPatternBottom from "../assets/bg-pattern-bottom.svg";
-
-const details = [
-  {
-    title: "Followers",
-    value: "80K",
-  },
-  {
-    title: "Likes",
-    value: "803K",
-  },
-  {
-    title: "Photos",
-    value: "1.4K",
-  },
-];
 ---
 
 <html lang="en">
@@ -35,71 +16,18 @@ const details = [
       rel="stylesheet"
     />
     <style>
-      :root {
-        font-size: 18px;
-      }
-      body {
-        font-family: "Kumbh Sans", sans-serif;
-      }
-      ._card {
-        display: grid;
-        grid-template-rows: 1.35fr 1.5fr 1fr;
-      }
-
-      p {
-        text-align: center;
+      a:is(:hover){
+        text-decoration: underline;
       }
     </style>
   </head>
-  <body class="bg-brand-surface">
-    <div class="absolute -z-10 h-screen w-full overflow-hidden">
-      <img
-        src={bgPatternTop.src}
-        alt="Pattern"
-        class="absolute -top-12 -right-60 w-5/12"
-      />
-      <img
-        src={bgPatternBottom.src}
-        alt="Pattern"
-        class="absolute -bottom-24 -left-60 w-5/12"
-      />
-    </div>
-
-    <main class="mx-auto grid min-h-screen max-w-prose place-content-center">
-      <div
-        class="_card bg-brand-surface max-sm:max-w-11/12 w-80 overflow-hidden rounded-lg bg-white shadow shadow-xl shadow-gray-500"
-      >
-        <div class="relative w-full bg-slate-300">
-          <img
-            src={bgPatternCard.src}
-            alt="Pattern"
-            class="absolute top-0 left-0 w-full"
-          />
-          <img
-            src={imageVictor.src}
-            alt="Victor Crest"
-            class="absolute top-20 left-1/2 w-24 -translate-x-1/2 transform rounded-full border-6 border-white"
-          />
-        </div>
-        <div class="flex flex-col items-center justify-end pb-4">
-          <p class="">Victor Crest <span>26</span></p>
-          <p class="">London</p>
-        </div>
-        <ul
-          class="flex flex-row items-center justify-evenly border-t border-r-0 border-b-0 border-l-0 border-t-gray-200 p-6"
-        >
-          {
-            details.map((detail) => (
-              <li>
-                <p class="text-xl font-bold">{detail.value}</p>
-                <p class="text-brand-text-2 text-xs tracking-widest">
-                  {detail.title}
-                </p>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+  <body class="bg-stone-300 p-24">
+    <main class="text-center text-3xl">
+      <ul class="flex flex-col gap-4">
+        <li class="hover:underline"><a href="/profile-card">Profile Card component </a></li>
+        <li class="hover:underline"><a href="/blog-preview-card">Blog Preview Card component</a></li>
+        <li class="hover:underline"><a href="/faq-accordion">FAQ Accordion component</a></li>
+      </ul>
     </main>
   </body>
 </html>
