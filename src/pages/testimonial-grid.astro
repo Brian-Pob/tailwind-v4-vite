@@ -1,8 +1,8 @@
 ---
 import "../styles/styles.css";
-const title = "Frontend Mentor Challenges";
+const title = "Testimonial Grid | Frontend Mentor";
 const description =
-  "Frontend Mentor Challenges built with Astro and Tailwind CSS v4 alpha.";
+  "Testimonial Grid challenge from Frontend Mentor. Built with Astro and Tailwind CSS v4 alpha.";
 ---
 
 <html lang="en">
@@ -11,6 +11,7 @@ const description =
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
     <meta name="description" content={description} />
 
@@ -33,28 +34,18 @@ const description =
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+
     <style></style>
   </head>
-  <body class="bg-stone-300 p-24">
-    <main class="text-center text-3xl">
-      <ul class="flex flex-col gap-4">
-        <li class="hover:underline">
-          <a href="/profile-card">Profile Card component </a>
-        </li>
-        <li class="hover:underline">
-          <a href="/blog-preview-card">Blog Preview Card component</a>
-        </li>
-        <li class="hover:underline">
-          <a href="/faq-accordion">FAQ Accordion component</a>
-        </li>
-        <li class="hover:underline">
-          <a href="/testimonial-grid">Testimonial Grid component</a>
-        </li>
-      </ul>
+  <body class="min-h-screen bg-stone-300">
+    <main class="w-prose">
+      <div class="grid grid-cols-4 grid-rows-2 gap-4">
+        <div class="col-span-2 bg-slate-500">1</div>
+        <div class="col-start-3 bg-red-500">2</div>
+        <div class="col-start-1 row-start-2 bg-yellow-500">3</div>
+        <div class="col-span-2 col-start-2 row-start-2 bg-stone-500">4</div>
+        <div class="col-start-4 row-span-2 row-start-1 bg-green-500">5</div>
+      </div>
     </main>
   </body>
 </html>
