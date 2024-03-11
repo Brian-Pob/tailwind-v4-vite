@@ -3,6 +3,58 @@ import "../styles/styles.css";
 const title = "Testimonial Grid | Frontend Mentor";
 const description =
   "Testimonial Grid challenge from Frontend Mentor. Built with Astro and Tailwind CSS v4 alpha.";
+interface TestimonialProps {
+  name: string;
+  title: string;
+  headerText: string;
+  bodyText: string;
+}
+
+const testimonialData: TestimonialProps[] = [
+  {
+    name: "Daniel Clifford",
+    title: "Verified Graduate",
+    headerText: `I received a job offer mid-course, and the subjects I learned were current, if not more so, 
+      in the company I joined. I honestly feel I got every penny's worth.`,
+    bodyText: ` I was an EMT for many years before I joined the bootcamp. 
+      I've been looking to make a transition and have heard some people who had an amazing experience here. I signed up for the free intro course 
+      and found it incredibly fun! I enrolled shortly thereafter. The next 12 weeks was the best - and most grueling - time of my life. 
+      Since completing the course, I've successfully switched careers, working as a Software Engineer at a VR startup. `,
+  },
+  {
+    name: "Jonathan Walters",
+    title: "Verified Graduate",
+    headerText: `The team was very supportive and kept me motivated`,
+    bodyText: ` I started as a total newbie with virtually no coding skills.
+      I now work as a mobile engineer for a big company. This was one of the best investments I've made in myself. `,
+  },
+  {
+    name: "Jeanette Harmon",
+    title: "Verified Graduate",
+    headerText: `The team was very supportive and kept me motivated`,
+    bodyText: ` I started as a total newbie with virtually no coding skills.
+      I now work as a mobile engineer for a big company. This was one of the best investments I've made in myself. `,
+  },
+  {
+    name: "Patrick Abrams",
+    title: "Verified Graduate",
+    headerText: `Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and learning from their experiences was easy.`,
+    bodyText: ` The staff seem genuinely concerned about my progress which I find really refreshing. The program gave me the confidence necessary
+      to be able to go out in the world and present myself as a capable junior developer. The standard is above the rest. You will get the
+      personal attention you need from an incredible community of smart and amazing people. `,
+  },
+  {
+    name: "Kira Whittle",
+    title: "Verified Graduate",
+    headerText: `Such a life-changing experience. Highly recommended!`,
+    bodyText: ` Before joining the bootcamp, I've never written a line of code.
+      I needed some structure from professionals who can help me learn programming step by step. I was encouraged to enroll by a former
+      student of theirs who can only say wonderful things about the program. The entire curriculum and staff did not disappoint. They were  
+      very hands-on and I never had to wait long for assistance. The agile team project, in particular, was outstanding. It took my learning
+      to the next level in a way that no tutorial could ever have. In fact, I've often referred to it during interviews as an example of
+      my development experience. It certainly helped me land a job as a full-stack developer after receiving multiple offers. 100% recommend! `,
+  },
+];
 ---
 
 <html lang="en">
@@ -35,16 +87,139 @@ const description =
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <style></style>
+    <style>
+      .testimonials {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+        grid-template-areas: "one one two five" "three four four five";
+
+        max-width: min(95%, 1050px);
+
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(5, auto);
+          grid-template-areas: "one" "two" "three" "four" "five";
+          margin: 0 0.75em 0 0.75em;
+
+          padding: 1em 0 1em 0;
+        }
+
+        @media (min-width: 768px) and (max-width: 850px) {
+          grid-template-columns: repeat(2, auto);
+          grid-template-rows: repeat(3, auto);
+          grid-template-areas: "one two" "three four" "five five";
+          padding: 1em 0 1em 0;
+        }
+
+        .testimonial:nth-child(1) {
+          grid-area: one;
+
+          background-color: var(--purple-8);
+          color: white;
+          background-image: url("./bg-pattern-quotation.svg");
+          background-repeat: no-repeat;
+          background-position: 90% 0;
+        }
+
+        .testimonial:nth-child(2) {
+          grid-area: two;
+
+          background-color: var(--gray-7);
+          color: white;
+        }
+
+        .testimonial:nth-child(3) {
+          grid-area: three;
+
+          background-color: white;
+          img {
+            border-color: var(--purple-11);
+          }
+        }
+
+        .testimonial:nth-child(4) {
+          grid-area: four;
+
+          background-color: var(--gray-10);
+          color: white;
+        }
+
+        .testimonial:nth-child(5) {
+          grid-area: five;
+
+          background-color: white;
+          img {
+            border-color: var(--purple-11);
+          }
+        }
+      }
+
+      .testimonial {
+        min-height: 300px;
+
+        border-radius: 10px;
+        padding: 20px;
+
+        overflow: hidden;
+
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          border: 2px solid white;
+        }
+
+        @media (max-width: 768px) {
+          min-height: auto;
+        }
+
+        > .info {
+          display: flex;
+          gap: 1rem;
+        }
+
+        > p:nth-of-type(1) {
+          margin: 1rem 0 1rem;
+          font-weight: 600;
+          font-size: 1.3em;
+          line-height: 1.2;
+        }
+
+        > p:nth-of-type(2) {
+          font-size: 0.9em;
+          line-height: 1.5;
+          font-weight: 500;
+        }
+      }
+    </style>
   </head>
   <body class="min-h-screen bg-stone-300">
-    <main class="w-prose">
-      <div class="grid grid-cols-4 grid-rows-2 gap-4">
-        <div class="col-span-2 bg-slate-500">1</div>
-        <div class="col-start-3 bg-red-500">2</div>
-        <div class="col-start-1 row-start-2 bg-yellow-500">3</div>
-        <div class="col-span-2 col-start-2 row-start-2 bg-stone-500">4</div>
-        <div class="col-start-4 row-span-2 row-start-1 bg-green-500">5</div>
+    <main
+      class="mx-auto flex min-h-screen flex-col items-center justify-center"
+    >
+      <div
+        class="grid gap-4 md:max-h-[48rem] md:max-w-5xl md:grid-cols-4 md:grid-rows-2 testimonials"
+      >
+        {
+          testimonialData.map((testimonial) => (
+            <article class="testimonial">
+              <div class="info">
+                <img
+                  src="https://picsum.photos/50/50.webp"
+                  alt="profile picture"
+                />
+                <div class="name">
+                  <h3>{testimonial.name}</h3>
+                  <p>{testimonial.title}</p>
+                </div>
+              </div>
+              <p>{testimonial.headerText}</p>
+              <p>{testimonial.bodyText}</p>
+            </article>
+          ))
+        }
       </div>
     </main>
   </body>
