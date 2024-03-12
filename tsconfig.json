@@ -4,6 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@assets/*": ["./src/assets/*"],
+      "$lib/*": ["./src/lib/*"],
+      "$lib/": ["./src/lib/"],
     }
   }
 }

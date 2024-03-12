@@ -20,4 +20,9 @@
   --color-social-link-brand-text-1: hsl(0, 0%, 100%);
   --color-social-link-brand-text-2: hsl(75 94% 57%);
 
+  /* Accordion */
+  --color-accordion-brand-surface-1: hsl(275, 100%, 97%);
+  --color-accordion-brand-surface-2: hsl(0, 0%, 100%);
+  --color-accordion-brand-text-1: hsl(292, 42%, 14%);
+  --color-accordion-brand-text-2: hsl(292, 16%, 49%);
 }
