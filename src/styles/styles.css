@@ -2,7 +2,6 @@
 @import 'https://unpkg.com/open-props';
 
 @theme {
-
   /* Profile card */
   --color-pcard-brand-surface: hsl(185 75% 39%);
   --color-pcard-brand-text-1: hsl(229, 23%, 23%);
@@ -13,4 +12,12 @@
   --color-bpcard-brand-surface-2: hsl(0, 0%, 100%);
   --color-bpcard-brand-text-1: hsl(0, 0%, 7%);
   --color-bpcard-brand-text-2: hsl(0, 0%, 50%);
+
+  /* Social links */
+  --color-social-link-brand-surface-1: hsl(0, 0%, 8%);
+  --color-social-link-brand-surface-2: hsl(0, 0%, 12%);
+  --color-social-link-brand-surface-3: hsl(0, 0%, 20%);
+  --color-social-link-brand-text-1: hsl(0, 0%, 100%);
+  --color-social-link-brand-text-2: hsl(75 94% 57%);
+
 }

@@ -1,0 +1,114 @@
+---
+import "../styles/styles.css";
+import profileSvg from "@assets/social-links/profile.svg";
+const title = "Brian Poblete";
+const description = "Front-end developer, aspiring accessibility expert, and Oxford comma user.";
+
+const socialLinks = [
+  {
+    name: "GitHub",
+    url: "https://github.com/Brian-Pob",
+  },
+  {
+    name: "Website",
+    url: "https://brianmp.dev",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/brian-pob/",
+  },
+  {
+    name: "Frontend Mentor",
+    url: "https://www.frontendmentor.io/profile/Brian-Pob",
+  },
+  {
+    name: "CodePen",
+    url: "https://codepen.io/brian-pob",
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/brianmpdotdev",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/dvivrw9ml/image/upload/f_auto,q_auto/og-banner-plain-no-tag_jh0wrb"
+    />
+
+    <meta name="twitter:site" content="@brianmpdotdev" />
+    <meta name="twitter:title" content={title + "'s Links"} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/dvivrw9ml/image/upload/f_auto,q_auto/og-banner-plain-no-tag_jh0wrb"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        font-size: 14px;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-social-link-brand-surface-1">
+    <main class="mx-auto grid min-h-screen place-content-center">
+      <div
+        class="bg-social-link-brand-surface-2 flex w-md flex-col items-center justify-center gap-6 rounded-xl p-10 text-center"
+      >
+        <img
+          src={profileSvg.src}
+          alt={""}
+          width="160"
+          height="160"
+          class="max-h-40 max-w-40 rounded-full bg-white"
+        />
+        <div>
+          <h1 class="text-social-link-brand-text-1 mt-4 text-3xl font-bold">
+            {title}
+          </h1>
+          <p class="text-social-link-brand-text-2 text-lg font-semibold">
+            Florida, USA
+          </p>
+        </div>
+        <p class="text-social-link-brand-text-1 max-w-full text-lg">
+          {description}
+        </p>
+        <ul class="flex w-full flex-col justify-center gap-4">
+          {
+            socialLinks.map((link) => (
+              <a href={link.url} class=" inline-block">
+                <li class="bg-social-link-brand-surface-3 hover:bg-social-link-brand-text-2 text-social-link-brand-text-1 hover:text-social-link-brand-surface-1 w-full rounded-lg p-4 font-semibold transition hover:scale-105">
+                  {link.name}
+                </li>
+              </a>
+            ))
+          }
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
