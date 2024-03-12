@@ -100,11 +100,11 @@ const socialLinks = [
         <ul class="flex w-full flex-col justify-center gap-4">
           {
             socialLinks.map((link) => (
-              <a href={link.url} class=" inline-block">
-                <li class="bg-social-link-brand-surface-3 hover:bg-social-link-brand-text-2 text-social-link-brand-text-1 hover:text-social-link-brand-surface-1 w-full rounded-lg p-4 font-semibold transition hover:scale-105">
+              <li class="bg-social-link-brand-surface-3 hover:bg-social-link-brand-text-2 text-social-link-brand-text-1 hover:text-social-link-brand-surface-1 w-full rounded-lg font-semibold transition hover:scale-105">
+                <a href={link.url} class="inline-block w-full h-full  p-4 ">
                   {link.name}
-                </li>
-              </a>
+                </a>
+              </li>
             ))
           }
         </ul>
